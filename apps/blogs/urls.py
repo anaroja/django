@@ -16,5 +16,4 @@ urlpatterns = [
     url(r'^(?P<number>\w+)/delete$', views.destroy),
     #We are adding a form
     url(r'^create$', views.create)
- 
 ]

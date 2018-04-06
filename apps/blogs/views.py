@@ -14,14 +14,17 @@ def new(request):
 
 def create(request):
     if request.method == "POST":
-		print "*"*50
-		print request.POST
+        print "*"*50
+        print request.POST
         print request.POST['name']
         print request.POST['desc']
         request.session['name'] = "test"  # more on session below
-		print "*"*50
-		return redirect("/")
-	else:
+        request.session['name'] = request.POST['name']
+        request.session['counter'] = 100
+        print "*"*50
+        return redirect("/")
+    else:
+        return redirect("/")
 
 def show(request, number):
     response = 'placeholder to display blog '+number 
